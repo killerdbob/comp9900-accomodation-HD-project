@@ -1,0 +1,3 @@
+from: ys12@hotmail.com
+message: Repeatedly writing 'love letters' to the same person isn't likely to give you different results each time.
+time: 2016-07-16T13:25:08+0000

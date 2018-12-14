@@ -1,0 +1,29 @@
+11	13 Edward Avenue, Kensington NSW
+	-33.921315, 151.222111
+
+12	112 Todman Avenue, Kensington NSW
+	-33.909589, 151.222549
+
+13	4 Bowral Street, Kensington NSW
+	-33.909140, 151.223862
+
+14	10 Ascot Street, Kensington NSW
+	-33.908295, 151.224684
+
+15	2 Darling Street, Kensington NSW
+	-33.911476, 151.224392
+
+16	159 Todman Avenue, Kensington NSW
+	-33.910379, 151.224050
+
+17	2 Addison Street, Kensington NSW
+	-33.911999, 151.222841
+
+18	135 Doncaster Avenue, Kensington NSW
+	-33.915065, 151.224140
+
+19	18 Duke Street, Kensington NSW
+	-33.908980, 151.221867
+
+20	90 Anzac Parade, Kensington NSW
+	-33.906323, 151.224123

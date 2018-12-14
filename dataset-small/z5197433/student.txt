@@ -1,0 +1,11 @@
+home_suburb: Little Bay
+zid: z5197433
+courses: (2017 S1 ENGG1000, 2017 S1 ENGG1811, 2017 S1 MATH1011, 2017 S1 PHYS1111, 2017 S2 MATH1131, 2017 S2 MMAN2130, 2017 S2 PHYS1121)
+full_name: Daisy Fuentes
+birthday: 1995-09-17
+email: z5197433@unsw.edu.au
+program: Engineering (Honours)
+friends: (z5196487, z5195928, z5191824, z5195935, z5191520, z5193755)
+home_longitude: 151.2374
+password: prince
+home_latitude: -33.9838

@@ -1,0 +1,6 @@
+user_name:huang
+birthday:2018-12-12
+password:huang
+email:dddddddddd@gmail.com
+phone number:123456789
+address:kingsford

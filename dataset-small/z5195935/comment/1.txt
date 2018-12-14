@@ -1,0 +1,5 @@
+longitude: 151.2383
+latitude: -33.9256
+time: 2013-11-13T23:56:30+0000
+message: To the girl in the BSXC hoodie and her friend at anytime fitness bondi junction last Monday at midnight. I've been thinking about both of you all week, wondering why you didn't re-rack your weights...
+from: z5195935

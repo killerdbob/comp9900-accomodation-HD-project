@@ -1,0 +1,33 @@
+title:  Parkside Art Deco retreat
+
+
+configuration: 4 guests,2 bedrooms,2 beds,1 bath
+ 
+belonging: iuo@126.com 
+
+Host:  Karen
+ 
+
+price:   $207
+ 
+address: 38 Boronia Street, Kensington NSW
+
+latitude: -33.906571
+
+longitude: 151.222551
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Iron
+Hair dryer
+Hangers
+
+
+Policies:
+No smoking
+No parties or events
+Check-in is anytime after 3PM
+Check out by 11AM
+Self check-in with lockbox

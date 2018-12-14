@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/COMP9900/
+ExecStart=/usr/local/bin/uwsgi --ini /root/COMP9900/9900.ini
+
+[Install]
+WantedBy=multi-user.target

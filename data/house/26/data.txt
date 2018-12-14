@@ -1,0 +1,36 @@
+title:  Room in a lovely beach environment
+
+
+configuration:  2 guests,1 bedroom,1 bed,2 baths
+ 
+
+belonging: ys12@hotmail.com 
+
+Host:  Kelly
+ 
+
+price:   $90
+ 
+address: 159 Todman Avenue, Kensington NSW
+
+latitude: -33.910379
+
+longitude: 151.224050
+
+ 
+ 
+Amenities:
+Kitchen
+Iron
+Hair dryer
+Washer
+Essentials
+ 
+
+
+Policies:
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 3PM
+Check out by 1PM

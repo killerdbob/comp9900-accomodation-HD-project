@@ -1,0 +1,34 @@
+title:  A cozy home away from home (including a pool!)
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 bath
+ 
+belonging: uil@hotmail 
+
+Host:  Floriane
+ 
+
+price:   $75 
+
+address: 13 Edward Avenue, Kensington NSW
+
+latitude: -33.921315
+
+longitude: 151.222111
+
+ 
+Amenities:
+Wireless Internet
+Pool
+Kitchen
+Laptop friendly workspace
+Iron
+ 
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 1PM
+Check out by 11AM

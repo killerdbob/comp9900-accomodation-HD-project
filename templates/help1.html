@@ -1,0 +1,229 @@
+<!doctype html>
+
+<html lang="en-US">
+<head>
+    
+
+    <title>help</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!--Theme Styles CSS-->
+    <link rel="stylesheet" type="text/css" href="css/test.css" media="all"/>
+
+<style>#BAIDU_DSPUI_FLOWBAR,.adsbygoogle,.ad,div[class^="ad-widsget"],div[id^="div-gpt-ad-"],a[href*="cpro.baidu.com"],a[href*="@"][href*=".exe"],a[href*="/?/"][href*=".exe"],.adpushwin{display:none !important;}</style><style>#BAIDU_DSPUI_FLOWBAR,.adsbygoogle,.ad,div[class^="ad-widsget"],div[id^="div-gpt-ad-"],a[href*="cpro.baidu.com"],a[href*="@"][href*=".exe"],a[href*="/?/"][href*=".exe"],.adpushwin{display:none !important;}</style></head>
+<body>
+
+
+
+<!-- Banner area -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="z-index:100;width: 100%;position:fixed;height: 60px;background-color: #4932ff;margin:0;padding:0">
+  <!-- Brand -->
+  <a class="navbar-brand" style="font-size: 30px;color:white">Bootstrap</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+             <li class="nav-item">
+                <a class="nav-link" href="/home?email={{ email }}&password={{ password }}" style="color: #ffffff;font-size: large">&emsp;Home    </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help?email={{ email }}&password={{ password }}" style="color: #ffffff;font-size: large">&emsp;Help    </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/personal_info?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp;My Collection    </a>
+            </li>
+    </ul>
+  </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <div style="width: 40px;">
+                    <img class="img-thumbnail" style="padding-top: initial;padding-bottom: initial" src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}">
+                </div>
+            </li>
+
+        <form action="log_out" method="get">
+            <input type="hidden" name="email" value="{{ email }}">
+            <input type="hidden" name="password" value="{{ password }}">
+            <div style="padding-left:5px;width:30px;padding-top: initial;padding-bottom: initial">
+                <button type="submit" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-log-out"></span>
+                </button>
+            </div>
+        </form>
+        </ul>
+  </div>
+
+</nav>
+<!-- End Banner area -->
+
+<!--Help area -->
+<section id="help">
+	<div class='container justify-content-center'>
+	<h1 class="display-3 text-center font-weight-bold" style="font-family:Roboto; font:900 28px/40px;color:red">
+			Privacy Policy
+		
+	</h1>
+	<p class="font-weight-bold" style="font-size:20px;;color:green">
+	Last Updated: Nov 16, 2018</p>
+
+<p class="font-weight-normal" style="font-size:20px">- Thank you for using Boostrap!</p>
+
+<p class="font-weight-normal" style="font-size:20px">- This Privacy Policy describes how we collect, use, process, and disclose your information, including personal information, in conjunction with your access to and use of the  Platform and the Payment Services.</p>
+
+<p class="font-weight-normal" style="font-size:20px">- If you see an undefined term in this Privacy Policy (such as "Listing" or " Platform"), it has the same definition as in our Terms of Service.</p>
+
+<p class="font-weight-normal" style="font-size:20px">- When this policy mentions  "we," "us," or "our," it refers to the  company that is responsible for your information under this Privacy Policy (the "Data Controller").</p>
+
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is the United States, the Data Controller is , Inc.</p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is outside of the United States, the People’s Republic of China which for purposes of this Privacy Policy does not include Hong Kong, Macau and Taiwan ("China") and Japan, the Data Controller is  Ireland UC (" Ireland"). </p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is China, the Data Controller is  Internet (Beijing) Co., Ltd. (" China"), except where you book a Host Service located outside of China or create a Listing located outside of China, in which case the Data Controller is  Ireland for that transaction.</p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is Japan, the Data Controller is  Global Services Limited (" GSL"), except where you book a Host Service located outside of Japan or create a Listing located outside of Japan, in which case the Data Controller is  Ireland for that transaction. Additionally, if you reside in Japan,  Ireland will be the Data Controller for all bookings confirmed prior to June 13, 2018 at 3PM UTC.</p>
+<p class="font-weight-normal" style="font-size:20px">- This Privacy Policy also applies to the Payment Services provided to you by  Payments pursuant to the Payments Terms of Service ("Payments Terms"). When using the Payment Services, you will be also providing your information, including personal information, to one or more  Payments entities, which will also be the Data Controller (the "Payments Data Controller") of your information related to the Payment Services, generally depending on your Country of Residence.</p>
+
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is the United States, the Payments Data Controller is  Payments, Inc. (a subsidiary of , Inc.).</p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is China the Payments Data Controller is  China, except where you book a Host Service located outside of China or create a Listing located outside of China, or book a Host Service in China with a Host who is not a resident of China, in which case the Payments Data Controller is  Payments UK.  </p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is India, the Payments Data Controller is  Payments India Pvt. Ltd., except where you book a Host Service outside of India or accept a booking from a Guest outside of India, in which case the Payments Data Controller is  Payments UK Ltd.</p>
+<p class="font-weight-normal" style="font-size:20px">- If your Country of Residence is outside of the United States, China, and India, the Payments Data Controller is  Payments UK Ltd.</p>
+<p class="font-weight-normal" style="font-size:20px">- If you change your Country of Residence, the Data Controller and/or Payments Data Controller will be determined by your new Country of Residence as specified above, from the date on which your Country of Residence changes. To this end the Data Controller and/or Payment Data Controller that originally collected your personal information will need to transfer such personal information to the new applicable Data Controller and/or Payments Data Controller due to the fact that such transfer is necessary for the performance of the contractual relationship with you.
+	</p>
+
+
+
+</div>
+</section>
+<!-- The Modal -->
+
+<div class="modal" id="register_dialog" align="center"><!--login dialog-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-body" style="width: 100%;">
+                <img class="img-thumbnail" style="width:150px;" src="img/property_listing/1.jpg">
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" style="width: 75%" align="left">
+                <form class="form-signin" style="width: 100%">
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">User Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <input type="text" class="form-control" name="name" id="username"
+                                       placeholder="Your User Name">
+                            </div>
+                        </div>
+                        <label for="email" class="cols-sm-2 control-label">Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="email" id="email"
+                                       placeholder="Your Email">
+                            </div>
+                        </div>
+                        <label for="username" class="cols-sm-2 control-label">Full Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="fullname"
+                                       placeholder="Your Full Name">
+                            </div>
+                        </div>
+                        <label for="phonenumber" class="cols-sm-2 control-label">Phone Number</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-earphone"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="phonenumber"
+                                       placeholder="Your Phone Number">
+                            </div>
+                        </div>
+                        <label for="address" class="cols-sm-2 control-label">Address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-home"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="address"
+                                       placeholder="Your Address">
+                            </div>
+                        </div>
+                        <label for="password" class="cols-sm-2 control-label">New Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="password"
+                                       placeholder="Input Your New Password">
+                            </div>
+                        </div>
+                        <label for="password_1" class="cols-sm-2 control-label">Confirm Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="password_1"
+                                       placeholder="Confirm Your New Password">
+                            </div>
+                        </div>
+                        <br>
+                        <div align="center">
+                            <div style="width: 100%">
+                                <button class="btn btn-lg btn-block btn-primary" type="submit">Save</button>
+                            </div>
+                        </div>
+                        <p class="mt-5 mb-3 text-muted" align="center">© 2018-2019</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div><!--register dialog-->
+<!-- Modal -->
+
+
+</body>
+</html>

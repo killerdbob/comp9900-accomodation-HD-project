@@ -1,0 +1,5 @@
+longitude: 151.2718
+latitude: -33.9150
+time: 2013-08-14T10:47:08+0000
+message: To the blonde girl wearing black who sat in the back of SAHT1102 lecture smiling to yourself, please smile at me like that.
+from: z5198757

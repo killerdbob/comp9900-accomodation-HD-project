@@ -1,0 +1,29 @@
+1	Unit 5, 36 Meeks Street, Kingsford NSW
+	-33.922869, 151.231800
+
+2	Unit 2, 65 Willis Street, Kinsford NSW
+	-33.923381, 151.231413
+
+3	106 Barker Street, Kingsford NSW
+	-33.920600, 151.233871
+
+4	Unit 20, 255 Anzac Parade, Kingsford NSW
+	-33.920194, 151.226271
+
+5	Unit 4, 23 Harbourne Road, Kingsford NSW
+	-33.921866, 151.228554
+
+6	Unit 8, 10 See Street, Kingsford NSW
+	-33.921997, 151.224174
+
+7	Unit 10, 301 Anzac Parade, Kingsford NSW
+	-33.921945, 151.226625
+
+8	Unit 3, 40 Houston Road, Kingsford NSW
+	-33.921747, 151.225701
+
+9	Unit 12, 243 Anzac Parade, Kingsford NSW
+	-33.919666, 151.226050
+
+10	Unit 4, 467 Anzac Parade, Kingsford NSW
+	-33.928212, 151.232508

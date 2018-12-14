@@ -1,0 +1,35 @@
+title:  Private room in Randwick
+
+configuration:  2 guests,1 bedroom,1 bed,1 bath
+ 
+belonging: ghj@qq.com
+
+Host:  Simone
+ 
+
+price:   $70
+
+address: 8 Silver Street, Randwick NSW
+
+latitude: -33.913703
+
+longitude: 151.238332
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Hangers
+Shampoo
+Washer
+Essentials
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 11AM

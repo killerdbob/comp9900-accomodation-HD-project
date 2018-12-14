@@ -1,0 +1,35 @@
+title:  Private double room with ensuite-randwick
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 private bath
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $25
+
+address: 28 Cook Street, Randwick NSW
+
+latitude: -33.910837
+
+longitude: 151.239177
+ 
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Hangers
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+Check-in is anytime after 3PM
+
+ 

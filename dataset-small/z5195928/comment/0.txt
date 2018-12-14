@@ -1,0 +1,5 @@
+longitude: 151.2361
+message: To the Nubian princesses of UNSW, got time for a white guy who is a part of the BarBellClub? Yes, jungle fever.
+latitude: -33.9112
+from: z5195928
+time: 2013-05-10T08:34:16+0000

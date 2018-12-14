@@ -1,0 +1,39 @@
+title:  UNSW/Rosehill Racecourse/Moore Park/Sydney city
+
+
+configuration: 1 guests,1 bedroom,1 bed,1 private bath
+ 
+
+belonging: 97842142@qq.com
+
+Host: Laicong
+ 
+
+price:   $55
+
+address: 31 Strachan Street, Kingsford NSW
+
+latitude: -33.921456
+
+longitude: 151.225994
+ 
+ 
+ 
+Amenities:
+Free parking on premises
+Wireless Internet
+Kitchen
+Hair dryer
+Iron
+Breakfast
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is 12PM (noon) - 9PM
+Check out by 10AM
+ 

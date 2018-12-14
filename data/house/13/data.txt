@@ -1,0 +1,35 @@
+title:  Beautiful Apartment Perfect Location 4 Beach&City
+
+
+configuration:  4 guests,2 bedrooms,2 beds,2 baths
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $282 
+
+address: 50 Cook Street, Randwick NSW
+
+latitude: -33.911730
+
+longitude: 151.238969
+ 
+ 
+ 
+Amenities:
+Free parking on premises
+Wireless Internet
+Kitchen
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+Check-in is anytime after 2PM
+Check out by 10AM
+ 

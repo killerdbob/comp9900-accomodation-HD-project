@@ -1,0 +1,37 @@
+title:  Peaceful Parkside Oasis
+
+configuration:  4 guests,2 bedrooms,2 beds,1 bath
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $100
+
+address: 30 Waratah Avenue, Randwick NSW
+ 
+latitude: -33.914636
+
+longitude: 151.238642
+
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Spa
+Laptop friendly workspace
+Iron
+Breakfast
+ 
+
+
+Policies:
+No smoking
+No parties or events
+Check-in time is 3PM - 12AM (midnight)
+Check out by 11AM
+
+ 

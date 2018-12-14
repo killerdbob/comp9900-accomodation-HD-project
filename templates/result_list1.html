@@ -1,0 +1,156 @@
+﻿{## class : result_list1.html#}
+{## writer : huang, wei#}
+{## zid : 5119435#}
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!--Theme Styles CSS-->
+    {#    <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>#}
+    <script>
+        function search() {
+            if (event.keyCode == 13) {
+                document.getElementById("search").click();
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- End Heder_Bottom -->
+<input type="hidden" id="email" value="{{ email }}">
+<input type="hidden" id="password" value="{{ password }}">
+<!-- Banner area -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark"
+     style="z-index:100;width: 100%;position:fixed;height: 60px;background-color: #4932ff;margin:0;padding:0">
+    <!-- Brand -->
+    <a class="navbar-brand" style="font-size: 30px;color:white">Bootstrap</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp;Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp;Help </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/personal_info?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp;My Collection </a>
+            </li>
+        </ul>
+    </div>
+
+    <form style="width: 40%">
+        <div class="input-group" style="width:300px;padding-top: 15px;padding-bottom: 15px" align="right">
+            <div class="input-group-prepend">
+                <button id="search" type="button" class="btn btn-primary"
+                        style="height:40px;background:rgba(255,255,255,.5);border:0px;"
+                        onclick="load_content('content1', '/result_list_content?email='+document.getElementById('email').value
+                         +'&password='+document.getElementById('password').value
+                         +'&cur_page=1&search='+document.getElementById('search_box').value.replace(' ','+'));">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+            <input type="text" class="form-control" id="search_box" placeholder="{{ search_phrase }}"
+                   value="{{ search_phrase }}"
+                   style="width: auto; font-size:medium;height:40px;background:rgba(255,255,255,.5);border:0px;">
+        </div>
+    </form>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <div style="width: 40px;">
+                    <img class="img-thumbnail" style="padding-top: initial;padding-bottom: initial"
+                         src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}">
+                </div>
+            </li>
+
+            <form action="log_out" method="get">
+                <input type="hidden" name="email" value="{{ email }}">
+                <input type="hidden" name="password" value="{{ password }}">
+                <div style="padding-left:5px;width:30px;padding-top: initial;padding-bottom: initial">
+                    <button type="submit" class="btn btn-warning btn-lg"><span
+                            class="glyphicon glyphicon-log-out"></span>
+                    </button>
+                </div>
+            </form>
+        </ul>
+    </div>
+
+</nav>
+
+
+<!-- End Banner area -->
+
+<!-- Heading-item area -->
+<div id="content1" style="padding-top: 70px"></div>
+
+
+</body>
+<script>
+    function colloct(node, houseid) {
+        var e = document.getElementById('email').value;
+        var p = document.getElementById('password').value;
+        if (node.className === "glyphicon-heart glyphicon glyphicon-heart-empty") {
+            url = 'colloct?email=' + e
+                + '&password=' + p
+                + '&house_id=' + houseid;
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: url,
+                success: function (temp) {
+                    aler(temp);
+                }
+            });
+            node.className = "glyphicon-heart glyphicon glyphicon-heart";
+        } else {
+            url = 'uncolloct?email=' + e
+                + '&password=' + p
+                + '&house_id=' + houseid;
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: url,
+                success: function (temp) {
+                    aler(temp);
+                }
+            });
+            node.className = "glyphicon-heart glyphicon glyphicon-heart-empty";
+        }
+    }
+
+    function load_content(id, url) {
+        $('#' + id).load(url);
+    }
+
+    load_content('content1', '/result_list_content?cur_page=1&search=' + document.getElementById('search_box').value.replace(' ', '+')
+        + '&email=' + document.getElementById('email').value + '&password=' + document.getElementById('password').value);
+</script>
+</html>
+

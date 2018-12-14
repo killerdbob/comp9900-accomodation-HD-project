@@ -1,0 +1,32 @@
+title:  Vanilos Place (Room 1)
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 bath
+ 
+belonging: iuo@126.com 
+
+Host:  Karen
+ 
+
+price:   $74
+ 
+address: 12 Elsmere Street, Kensington NSW
+
+latitude: -33.906381
+
+longitude: 151.225152
+
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Washer
+Essentials
+Cable TV
+
+
+Policies:
+No pets
+No parties or events
+Check-in time is flexible
+ 

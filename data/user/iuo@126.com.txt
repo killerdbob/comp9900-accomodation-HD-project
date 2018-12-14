@@ -1,0 +1,7 @@
+user_name:Karen
+birthday:28/02/1999
+password:1
+email: iuo@126.com 
+phone number:1107237789
+address:Kensington,unsw
+property:17,18,19,20 

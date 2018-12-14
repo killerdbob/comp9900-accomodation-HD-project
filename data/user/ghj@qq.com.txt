@@ -1,0 +1,7 @@
+user_name:Simone
+birthday:28/06/1993
+password:1
+email:ghj@qq.com  
+phone number:1567237789
+address:Randwick,unsw
+property:16,41,42,43,44,45,46 

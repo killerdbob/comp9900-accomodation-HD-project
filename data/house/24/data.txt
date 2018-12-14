@@ -1,0 +1,36 @@
+title:  Tidy and positive house near the city and beaches!
+
+
+configuration:  1 guest,2 bedrooms,2 bed,1 bath
+ 
+
+belonging: ys12@hotmail.com 
+
+Host:  Kelly
+ 
+
+price:   $111
+
+address: 10 Ascot Street, Kensington NSW
+ 
+latitude: -33.908295
+
+longitude: 151.224684
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Iron
+Hair dryer
+Hangers
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 12AM (midnight)
+Self check-in with lockbox

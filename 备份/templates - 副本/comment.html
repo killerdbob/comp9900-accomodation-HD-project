@@ -1,0 +1,88 @@
+{## class : comment.html#}
+{## writer : huang, wei#}
+{## zid : 5119435#}
+
+{% if cur_page != -1 and total_page>0 %}
+    <br>
+    <div class="form-group"
+         style="margin-left: 5px;padding-top: 5px; width:calc(100% - 10px);border:1px solid #cceff5;background:#fafcfd;">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="3" id="comment"></textarea>
+    </div>
+    <div align="right" style="margin-right: 5px;margin-bottom: 5px">
+        <button type="button" class="btn btn-submit"
+                onclick="reply_2(this,'reply_comment?email={{ email }}&password={{ password }}'
+                        +'&house_id='+document.getElementById('houseid').value
+                        +'&comment_id=-1&comment_content='
+                        +this.parentElement.previousElementSibling.lastElementChild.value)">post
+        </button>
+    </div>
+{% endif %}
+
+{% for item in comment_content %}
+    <div class="row" id="{{ item['comment_id'] }}"
+         style="margin-left: 5px;padding-top: 5px; width:calc(100% - 10px); border:1px solid #cceff5;background:#fafcfd">
+        <div style="width: 50px;">
+            <img class="img-thumbnail"
+                 src="{{ url_for('static',filename='data/user/head/'+(item['from']|string)+'.jpg') }}">
+        </div>
+        <div style=" width: calc(100% - 90px);">
+            {{ item['message']|safe }}
+        </div>
+        <div class="btn-group-vertical">
+            {% if item['from']==belonging %}
+                <button type="button" class="btn btn-danger"
+                        onclick="del_comment(this,
+                                'del_comment?email='+document.getElementById('email').value
+                                +'&password='+document.getElementById('password').value
+                                +'&comment_id={{ item['comment_id'] }}&house_id='
+                                +document.getElementById('houseid').value)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            {% endif %}
+            <button type="button" class="btn btn-success"
+                    onclick="reply(this,'reply_comment?email='+document.getElementById('email').value
+                            +'&password='+document.getElementById('password').value
+                            +'&comment_id={{ item['comment_id'] }}&house_id='
+                            +document.getElementById('houseid').value)">
+                <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button type="button" class="btn btn-default"
+                    onclick="add_comment(this,
+                            'get_comment?comment_id={{ item['comment_id'] }}&house_id='+document.getElementById('houseid').value);">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+        </div>
+        <div style="margin-bottom:5px;width: 100%">
+        </div>
+    </div>
+{% endfor %}
+
+<!--评论区 end-->
+{% if cur_page != -1 and total_page>0 %}
+    <!--前后按钮-->
+    <div align="left" style="width: 600px">
+        <form>
+            <div align="center" style="height: 100px;">
+                <div class="input-group" style="padding-top: 30px;padding-bottom: 30px;width: 220px;height: 30px">
+                    <button type="button" class="btn btn-primary" style="height:30px;width: 30px"
+                            onclick="load_content('commentary','/get_comment?cur_page={{ previous_page }}&house_id='
+                                    + document.getElementById('houseid').value
+                                    +'&email={{ email }}&password={{ password }}' )">
+                        <span class="glyphicon glyphicon-arrow-left"></span>
+                    </button>
+                    <div class="input" align="center" style="font-size: large">
+                        &emsp;&emsp;{{ cur_page }}&emsp;/&emsp;{{ total_page }}&emsp;&emsp;
+                    </div>
+                    <button type="button" class="btn btn-primary" style="height:30px;width: 30px"
+                            onclick="load_content('commentary','/get_comment?cur_page={{ next_page }}&house_id='
+                                    + document.getElementById('houseid').value
+                                    +'&email={{ email }}&password={{ password }}')">
+                        <span class="glyphicon glyphicon-arrow-right"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div><!--分页-->
+    <!--前后按钮-->
+{% endif %}

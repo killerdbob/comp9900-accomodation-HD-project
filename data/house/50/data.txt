@@ -1,0 +1,38 @@
+title:  Convenient Randwick 2 bedroom apartment
+
+configuration:  4 guests,2 bedrooms,2 beds,1 bath
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $105
+
+address: 51 Church Street, Randwick NSW
+ 
+latitude: -33.911358
+
+longitude: 151.238517
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Free parking on premises
+Laptop friendly workspace
+Iron
+Air conditioning
+ 
+
+
+Policies:
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 2PM
+Check out by 10AM
+Self check-in with lockbox
+
+ 

@@ -1,0 +1,6 @@
+user_name:pe
+birthday:2006-12-12
+password:123
+email:zzzz2z@gmail.com
+phone number:04640
+address:9/30 gardeners road

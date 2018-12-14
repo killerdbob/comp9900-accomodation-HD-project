@@ -1,0 +1,36 @@
+title:  Sydney Comfortable Private Room
+
+
+configuration:  1 guest,1 bedroom,1 bed,1 bath
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $45
+
+address: 40 Houston Road, Kingsford NSW
+
+latitude: -33.921747
+
+longitude: 151.225701
+ 
+ 
+Amenities:
+Wireless Internet
+Laptop friendly workspace
+Hair dryer
+Hangers
+Washer
+Essentials
+ 
+
+
+Policies:
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 3PM
+ 

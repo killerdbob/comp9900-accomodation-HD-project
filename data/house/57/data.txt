@@ -1,0 +1,37 @@
+title:  Barker house with a view
+
+configuration:  1 guest,1 bedroom,1 bed,1 shared bath
+ 
+
+belonging: zzz@163.com
+
+Host:  Beverley And Michael
+
+
+price:   $27
+
+address: 37 Duke Street, Kensington NSW
+
+latitude: -33.908342
+
+longitude: 151.220556
+ 
+ 
+ 
+Amenities:
+Free parking on premises
+Wireless Internet
+Kitchen
+Washer
+Essentials
+
+ 
+
+
+Policies:
+Not suitable for children and infants
+No pets
+No parties or events
+Check-in time is 12PM (noon) - 12AM (midnight)
+
+ 

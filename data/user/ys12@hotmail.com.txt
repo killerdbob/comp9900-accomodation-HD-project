@@ -1,0 +1,7 @@
+user_name:Kelly
+birthday:15/02/1965
+password:1
+email: ys12@hotmail.com 
+phone number:1666666885
+address:Kensington,unsw
+property:23,24,25,26,27,28,29

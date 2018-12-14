@@ -1,0 +1,5 @@
+time: 2016-10-03T14:37:33+0000
+longitude: 151.2108
+message: Everyone is in a relationship, and here i am trying to hit 1 million before i graduate\n\nLife goals
+from: z5190520
+latitude: -33.7603

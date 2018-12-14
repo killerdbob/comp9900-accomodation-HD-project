@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Maps Tutorial</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style>
+		html,body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			height: 100%;
+		}
+		.form {
+			height: 30px;
+			background: black;
+		}
+		.map-view {
+			height: 100%;
+		}
+		#map {
+			height: 100%;
+			background: white;
+		}
+		#map-directions {
+			height: 100%;
+			background: lightblue;
+			overflow-y: scroll;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="container">
+	<div class="row text-center form">
+		<input id="search" type="text">
+		<button id="submit">Submit</button>
+	</div>
+	<div class="row map-view">
+		<div id="map" class="col-xs-6"></div>
+		<div id="map-directions" class="col-xs-6"></div>
+	</div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+	//global variable where our markers will go
+	var markers = [];
+  function initMap() {
+    mapDiv = document.getElementById('map');
+    map = new google.maps.Map(mapDiv, {
+    	//set center of map on load
+		center: {lat: 44.540, lng: -78.546},
+		//set zoom, lower number means zoom out, and vice versa
+		zoom: 7,
+		//you can set map type to roadmap, terrain, satellite, or hybrid
+		mapTypeId: 'terrain',
+		//If you plan to move a control on the screen
+		//it is recommened to set that control to true to always show
+		mapTypeControl: true,
+		//this sets the position, go to docs to see other positions
+		mapTypeControlOptions: {
+		position: google.maps.ControlPosition.TOP_LEFT
+		},
+		//same as before, just different controls
+		fullscreenControl: true,
+		fullscreenControlOptions: {
+		position: google.maps.ControlPosition.LEFT_TOP
+		},
+		streetViewControl: true,
+		streetViewControlOptions: {
+		position: google.maps.ControlPosition.LEFT_TOP
+		},
+		zoomControl: true,
+		zoomControlOptions: {
+		position: google.maps.ControlPosition.LEFT_TOP
+		}
+    });
+    //for Autocomplete search
+    autoSearch = new google.maps.places.Autocomplete(document.getElementById('search'));
+    //Geocoder needed for latitude and longitude
+    geocoder = new google.maps.Geocoder();
+  }
+  //when the submit button is clicked
+  $('#submit').on('click', function() {
+  		//delete markers on map if any exist
+		for (var i = 0; i < markers.length; i++) {
+			//setMap(null) removes marker from map
+			markers[i].setMap(null);
+		}
+  		//get the search value
+  		var searchValue = $("#search").val();
+  		//use geocoder
+  		//the first parameter is an object with 'address', which is used if you
+  		//want to get coordinates from an address
+  		//to get an address from coordinates, use
+  		//{'location': {'lat': 28.5383355, 'lng': -81.37923649999999}}
+  		//the second parameter is a callback function
+  		geocoder.geocode({'address': searchValue}, function(results, status) {
+	  		if(status === 'OK') {
+	  			//results is going to be the address, but it is
+	  			//going to give you a multiple choices in an array
+	  			//the first is probably the most accurate, so results[0] is your best bet.
+	  			//geometry.location is where you need to go to get
+	  			//the latitude and longitude, using the lat() and lng() functions
+	  			var geometry = results[0].geometry.location;
+	  			latitude = geometry.lat();
+	  			longitude = geometry.lng();
+	  			console.log('lat: ' + latitude + ', lng: ' + longitude);
+	  			//set a marker at location
+	  			var marker = new google.maps.Marker({
+					position: {'lat': latitude, 'lng': longitude},
+					map: map
+				});
+				//center map to marker clicked
+				marker.addListener('click', function() {
+					//this refers to the marker that is clicked
+					map.setCenter(this.getPosition());
+				});
+	  			//center the map to the marker position
+				map.setCenter(marker.getPosition());
+				//add marker for location searched as first marker
+				markers.push(marker);
+				//locations that are near each other
+				locations = [
+					{'lat': latitude + 0.1, 'lng': longitude + 0.1},
+					{'lat': latitude + 0.2, 'lng': longitude + 0.2},
+					{'lat': latitude + 0.3, 'lng': longitude + 0.3},
+					{'lat': latitude + 0.4, 'lng': longitude + 0.4},
+					{'lat': latitude + 0.5, 'lng': longitude + 0.5}
+				];
+				//loop through locations
+				for (var i = 0; i < locations.length; i++) {
+					//make a new marker for each location
+					marker = new google.maps.Marker({
+						position: locations[i],
+						map: map
+					});
+					//center map to marker clicked
+					marker.addListener('click', function() {
+						//this refers to the marker that is clicked
+						map.setCenter(this.getPosition());
+					});
+					//add it to the markers array
+					markers.push(marker);
+				}
+	  		}
+	  	});
+  });
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLCi0u9QNKIwBXcQcBHLtAMzUO7ARugjI&libraries=places&callback=initMap" type="text/javascript"></script>
+
+</body>
+</html>

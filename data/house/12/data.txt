@@ -1,0 +1,39 @@
+title:  Beautiful and homely home 
+
+
+configuration:  4 guests,2 bedrooms,2 beds,1 bath
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $231
+ 
+address: 66 Barker Street, Kingsford NSW
+	
+
+latitude: -33.920171
+
+longitude: 151.230715
+ 
+ 
+Amenities:
+Lift
+Wireless Internet
+Kitchen
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+Not suitable for infants (under 2 years)
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 3PM
+Check out by 11AM
+ 

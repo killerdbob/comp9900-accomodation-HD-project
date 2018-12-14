@@ -1,0 +1,5 @@
+latitude: -33.7515
+message: I have never seen someone as fine as you, Jon from bsoc. When god made you he was clearly showing off
+from: z5193755
+longitude: 151.0559
+time: 2013-09-01T19:59:02+0000

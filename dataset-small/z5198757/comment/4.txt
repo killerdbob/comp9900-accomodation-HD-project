@@ -1,0 +1,5 @@
+latitude: -33.9124
+message: CJ\nLet's play train. I can sit on your face and you can go "chew chew"
+longitude: 151.2347
+from: z5198757
+time: 2016-04-22T09:55:33+0000

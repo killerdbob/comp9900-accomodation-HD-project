@@ -1,0 +1,33 @@
+title:  Charming one-bedroom apartment
+
+
+configuration:  4 guests,1 bedroom,2 beds,1 bath
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $277 
+ 
+address: 71 Cowper Street, Randwick NSW
+
+latitude: -33.909183
+
+longitude: 151.240929
+ 
+ 
+Amenities:
+Wireless Internet
+Cable TV
+Kitchen
+Air conditioning
+Laptop friendly workspace
+Iron
+ 
+
+
+Policies:
+No parties or events
+ 

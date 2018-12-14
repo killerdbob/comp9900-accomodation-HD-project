@@ -1,0 +1,31 @@
+title:  Central location walk to everywhere
+
+
+configuration:  4 guests,1 bedroom,2 bed,1 bath
+ 
+belonging: ys12@hotmail.com 
+
+Host:  Kelly
+ 
+
+price:   $173 
+
+address: 4 Bowral Street, Kensington NSW
+ 
+latitude: -33.909140
+
+longitude: 151.223862
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Air conditioning
+Laptop friendly workspace
+ 
+
+
+Policies:
+No parties or events
+Check-in is anytime after 3PM
+ 

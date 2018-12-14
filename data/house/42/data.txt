@@ -1,0 +1,35 @@
+title:  A short walk to UNSW and Prince of Wales Hospital
+
+configuration:  1 guest,1 bedroom,1 bed,1 shared bath
+ 
+belonging: ghj@qq.com
+
+Host:  Simone
+ 
+
+price:   $69
+
+address: 54 Cook Street, Randwick NSW
+
+latitude: -33.911974
+
+longitude: 151.238928
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Laptop friendly workspace
+Iron
+Air conditioning
+Hair dryer
+ 
+
+
+Policies:
+Not suitable for infants (under 2 years)
+No smoking
+No parties or events
+Check-in is anytime after 3PM
+Check out by 11AM
+Self check-in with lockbox

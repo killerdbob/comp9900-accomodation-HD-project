@@ -1,0 +1,7 @@
+user_name:Siteng
+birthday:06/01/1997
+password:1
+email:ab2@gmail.com 
+phone number:1593770089
+address:kingsford,unsw
+property:8,9,10,11,12,38,39,40

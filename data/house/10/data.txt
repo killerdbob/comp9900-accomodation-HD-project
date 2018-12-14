@@ -1,0 +1,36 @@
+title:  Modern Refurbished Room in Sydney Eastern Suburb
+
+
+configuration:  1 guest,1 bedroom,1 bed,1 bath
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $75 
+
+address: 467 Anzac Parade, Kingsford NSW
+
+latitude: -33.928212
+
+longitude: 151.232508
+
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+No smoking
+No pets
+No parties or events
+Check-in time is 3PM - 12AM (midnight)
+ 

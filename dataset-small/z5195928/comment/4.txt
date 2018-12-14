@@ -1,0 +1,5 @@
+longitude: 151.2279
+from: z5195928
+message: To the girl in the Wallace Wurth building tonight, thanks for trying to help and so sorry I got you thrown out! Hope I see you around sometime so I can get your name :)
+time: 2016-09-11T11:42:03+0000
+latitude: -33.9099

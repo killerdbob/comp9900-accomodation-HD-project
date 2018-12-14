@@ -1,0 +1,32 @@
+title:  Stunning views, close to eastern beaches
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 bath
+ 
+
+belonging: ys12@hotmail.com
+ 
+Host:  Kelly
+ 
+
+price:   $138
+ 
+address: 135 Doncaster Avenue, Kensington NSW
+
+latitude: -33.915065
+
+longitude: 151.224140
+
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Iron
+Hair dryer
+Washer
+Cable TV
+
+
+Policies:
+Check-in is anytime after 1PM
+Check out by 11AM

@@ -1,0 +1,38 @@
+title:  UNSW, Kingsford, Sunny Room
+
+
+configuration: 2 guests,1 bedroom,2 beds,2 shared baths
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $42
+
+address: 73 Houston Road, Kingsford NSW
+ 
+latitude: -33.921716
+
+longitude: 151.225176
+ 
+ 
+Amenities:
+Free parking on premises
+Wireless Internet
+Kitchen
+Hair dryer
+Iron
+Laptop friendly workspace
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 11AM
+ 

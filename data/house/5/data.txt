@@ -1,0 +1,39 @@
+title:  Felix’s Home
+
+
+configuration:  5 guests,2 bedrooms,5 beds,1 bath
+ 
+
+belonging: 97842142@qq.com 
+
+Host:  Laicong
+ 
+
+price:   $128
+
+address: 23 Harbourne Road, Kingsford NSW
+
+latitude: -33.921866
+
+longitude: 151.228554
+
+ 
+Amenities: 
+Free parking on premises
+Wireless Internet
+Kitchen
+Iron
+Hair dryer
+Hangers
+ 
+
+
+Policies:
+Not suitable for infants (under 2 years)
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 1PM
+Check out by 10AM
+Self check-in with keypad
+ 

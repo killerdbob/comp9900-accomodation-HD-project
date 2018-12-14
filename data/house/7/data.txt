@@ -1,0 +1,33 @@
+title:  Single room with attached bathroom up for rent
+
+
+configuration:  1 guest,1 bedroom,1 bed,1 bath
+ 
+
+belonging: 97842142@qq.com 
+
+Host:  Laicong
+ 
+
+price: $46  
+
+address: 301 Anzac Parade, Kingsford NSW
+
+latitude: -33.921945
+
+longitude: 151.226625
+ 
+ 
+ 
+Amenities:
+Kitchen
+Hangers
+Cable TV
+Heating
+ 
+
+
+Policies:
+No pets
+Check-in time is 3PM - 10PM
+ 

@@ -1,0 +1,40 @@
+title:  Cosy and bright private room
+
+configuration:  1 guest,1 bedroom,1 bed,1 shared bath
+ 
+
+belonging: zzz@163.com
+
+Host:  Beverley And Michael
+
+
+price:   $150
+
+address: 34 Boronia Street, Kensington NSW
+
+latitude: -33.906317
+
+longitude: 151.222669
+ 
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Air conditioning
+Iron
+Hair dryer
+Laptop friendly workspace
+
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is 2PM - 8PM
+Check out by 12PM (noon)
+
+ 

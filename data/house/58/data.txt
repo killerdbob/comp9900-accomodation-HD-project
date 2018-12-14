@@ -1,0 +1,40 @@
+title:  Tidy and positive house near the city and beaches
+
+configuration:  1 guest,1 bedroom,2 beds,1 shared bath
+ 
+
+belonging: zzz@163.com
+
+Host:  Beverley And Michael
+
+
+price:   $51
+ 
+address: 38 Kensington Road, Kensington NSW
+
+latitude: -33.907434
+
+longitude: 151.221269
+ 
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Iron
+Hair dryer
+Hangers
+Shampoo
+
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 5PM
+Self check-in with lockbox
+
+ 

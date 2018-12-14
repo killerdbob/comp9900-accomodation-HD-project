@@ -1,0 +1,9 @@
+user_name:Irina
+birthday:08/02/1993
+password:1
+email:abc@126.com
+phone number:1593777789
+address:Randwick,unsw
+property:47,48,49,50,13,14,15
+deleted_post:
+collect:

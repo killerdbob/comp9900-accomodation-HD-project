@@ -1,0 +1,36 @@
+title: Cozy room next to UNSW
+
+
+configuration: 2 guests,1 bedroom,1 bed,1 bath
+
+belonging: z5119435@student.unsw.edu.au
+
+Host: huang wei
+
+
+price: $89 
+
+address: 36 Meeks Street, Kingsford NSW
+ 
+latitude: -33.922869
+
+longitude: 151.231800
+ 
+ 
+Amenities:
+Wireless Internet
+Cable TV
+Kitchen
+Laptop friendly workspace
+Iron
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 10AM
+No shoes in the house. 
+No smoking in the apartment, welcome to smoke in the balcony.

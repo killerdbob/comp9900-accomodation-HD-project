@@ -1,0 +1,11 @@
+home_latitude: -33.7140
+home_suburb: Leura
+birthday: 1998-07-12
+zid: z5195935
+full_name: Carmen Electra
+courses: (2017 S2 BIOM9450, 2017 S2 GSOE9010, 2017 S2 GSOE9220, 2017 S2 GSOE9510)
+program: Biomedical Engineering
+email: z5195935@unsw.edu.au
+home_longitude: 150.3226
+friends: (z5197433, z5198757, z5191520, z5193755)
+password: rosebud

@@ -1,0 +1,37 @@
+title:  A short walk to UNSW and Prince of Wales Hospital
+
+
+configuration:  1 guest,1 bedroom,1 bed,1 bath
+ 
+
+belonging: 97842142@qq.com 
+
+Host:  Laicong
+ 
+
+price: $114  
+
+address: 10 See Street, Kingsford NSW
+ 
+latitude: -33.921997
+
+longitude: 151.224174
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Air conditioning
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+Not suitable for infants (under 2 years)
+No smoking
+No parties or events
+Check-in is anytime after 3PM
+Check out by 11AM
+Self check-in with lockbox
+ 

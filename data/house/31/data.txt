@@ -1,0 +1,37 @@
+title:  UNSW LARGE PRIVATE ROOM AND BATHROOM SHOWER
+
+
+configuration: 2 guests,1 bedroom,1 bed,1 private bath
+ 
+
+belonging: z5119435@student.unsw.edu.au
+
+Host: huang wei
+ 
+
+price:   $75
+ 
+address: 62 Barker Street, Kingsford NSW
+
+latitude: -33.920352
+
+longitude: 151.230037
+ 
+ 
+Amenities:
+Free parking
+Wireless Internet
+Kitchen
+Gym
+Iron
+Breakfast
+ 
+
+
+Policies:
+Not suitable for children and infants
+No pets
+No parties or events
+Check-in time is 12PM (noon) - 9PM
+Check out by 10AM
+ 

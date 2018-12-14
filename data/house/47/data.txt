@@ -1,0 +1,41 @@
+title:  LUXURY 2 LEVEL APARTMENT- RANDWICK GUESTHOUSE
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 private bath
+ 
+
+belonging: abc@126.com 
+
+Host:  Irina
+ 
+
+price:   $90
+
+address: 4 Abbey Street, Randwick NSW
+ 
+latitude: -33.911540
+
+longitude: 151.239980
+
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Air conditioning
+Laptop friendly workspace
+Iron
+Hair dryer
+ 
+
+
+Policies:
+Not suitable for children and infants
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 2PM
+Check out by 10AM
+Self check-in with keypad
+
+
+ 

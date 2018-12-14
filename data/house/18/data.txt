@@ -1,0 +1,33 @@
+title:  Small single room in older house
+
+
+configuration:  1 guests,1 bedroom,1 bed,1 bath
+ 
+belonging: iuo@126.com
+ 
+Host:  Karen
+ 
+
+price:   $63
+
+address: 10 Elsmere Street, Kensington NSW
+
+latitude: -33.906231
+
+longitude: 151.225308
+ 
+
+ 
+Amenities:
+Wireless Internet
+Kitchen
+Laptop friendly workspace
+Iron
+Hair dryer
+
+
+
+Policies:
+Not suitable for children and infants
+No parties or events
+Self check-in with lockbox

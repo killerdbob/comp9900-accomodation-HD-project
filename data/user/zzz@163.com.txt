@@ -1,0 +1,7 @@
+user_name:Beverley And Michael
+birthday:15/02/1965
+password:1
+email: zzz@163.com  
+phone number:1598736231
+address:Kensington,unsw
+property:30,56,57,58,59,60

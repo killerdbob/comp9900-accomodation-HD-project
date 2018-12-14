@@ -1,0 +1,287 @@
+{## class : search0.html#}
+{## writer : cheng, wen#}
+{## zid : 5103407#}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+
+    <title>search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!--Theme Styles CSS-->
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='static/css/test.css') }}" media="all"/>
+</head>
+<style>
+
+</style>
+<body onscroll="off">
+<!-- Banner area -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark"
+     style="z-index:100;width: 100%;position:fixed;height: 60px;background-color: #4932ff;margin:0;padding:0">
+    <!-- Brand -->
+    <a class="navbar-brand" style="font-size: 30px;color:white">Bootstrap</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home?email=&password=" style="color: #ffffff;font-size: large">&emsp;Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help?email=&password=" style="color: #ffffff;font-size: large">&emsp;Help</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#login_dialog"
+                   style="color: #ffffff;font-size: large;cursor:pointer">&emsp;Log in</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<!--<nav class="navbar navbar-expand-sm"
+     style="width: 100%;height: 20%;background-color: #4932ff;overflow: auto;margin:0;padding:0">
+
+        <ul class="nav navbar-nav navbar-menu">
+            <li class="nav-item">
+                <a href="/home?email=" style="color: #ffffff;font-size: large">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/help?email=" style="color: #ffffff;font-size: large">Help</a>
+            </li>
+            <li class="nav-item">
+                <a data-toggle="modal" data-target="#login_dialog" style="color: #ffffff;font-size: large">Log in</a>
+            </li>
+        </ul>
+
+</nav>-->
+
+<!-- End Banner area -->
+
+<!-- Search_From_Area -->
+<section id="bg">
+
+    <div class='container justify-content-center' align="center">
+        <h1 class="display-3 text-center" style="font-family:Roboto; font-size:40px;color:white">
+            &emsp;&emsp;Find Your Perfect Home Today
+        </h1>
+        <br>
+        <form action="search0" style="width:35%;" method="get">
+            <div class="input-group mb-3 m-auto" style="border:0px;">
+                <input id='search' name='search' type="text" class="form-control"
+                       placeholder="please input the area " autocomplete="off"
+                       style="height:50px;background:rgba(255,255,255,.5);font-size: 20px;border:0px;font-family:Roboto">
+                <span class="input-group-btn">
+                    <button class="btn btn-lg btn-primary" id="search_btn" type="submit"
+                            style="height:50px;background:rgba(255,255,255,.5);border:0px;font-size: 20px"> search </button>
+                    </span>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- End Search_From_Area -->
+<!-- The Modal -->
+<div class="modal" id="login_dialog" align="center"><!--login dialog-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="width: 75%">
+                <form class="form-signin" action="search_login" method="get">
+                    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt=""
+                         width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </div>
+                        <input name="login_email" type="text" class="form-control" placeholder="email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </button>
+                        </div>
+                        <input name="login_password" type="password" class="form-control" placeholder="password">
+                    </div>
+                    <br>
+                    <button class="btn btn-lg btn-primary btn-block" style="color: #ffffff;font-size: large">Login
+                    </button>
+                    <button data-toggle="modal" data-target="#register_dialog" style="color: #ffffff;font-size: large"
+                            class="btn btn-lg btn-block" type="submit" data-dismiss="modal">Sign up
+                    </button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="register_dialog" align="center"><!--register dialog-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="width: 75%" align="left">
+                <form class="form-signin" action="search_register" method="get">
+                    <div class="form-group">
+
+                        <!-- email -->
+                        <label for="register_email" class="cols-sm-2 control-label">Your Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon glyphicon-envelope"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="register_email" id="register_email"
+                                       placeholder="Enter your Email" required/>
+                            </div>
+                        </div>
+
+                        <!-- passwd & confirm pw -->
+                        <label for="register_password" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="password" class="form-control" name="register_password"
+                                       id="register_password"
+                                       placeholder="Enter your password" required/>
+                            </div>
+                        </div>
+
+                        <label for="register_password_1" class="cols-sm-2 control-label">Password Comfirmation</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="password" class="form-control" name="register_password_1"
+                                       id="register_password_1"
+                                       placeholder="Confirm your password" onblur="checkpassword()"/>
+                            </div>
+                        </div>
+
+                        <!-- username-->
+                        <label for="register_username" class="cols-sm-2 control-label">Your Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="register_username" id="register_username"
+                                       placeholder="Enter your Name"/>
+                            </div>
+                        </div>
+                        <!-- birthday -->
+                        <label for="register_birthday" class="cols-sm-2 control-label">Your birthday</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-time"></span>
+                                    </button>
+                                </div>
+                                <input type="date" value="2018-12-12" name="register_birthday" id="datetimepicker">
+                            </div>
+                        </div>
+                        <!-- phone number-->
+                        <label for="register_phone_number" class="cols-sm-2 control-label">Your Phone number</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="register_phone_number"
+                                       id="register_phone_number"
+                                       placeholder="Enter your phone number"/>
+                            </div>
+                        </div>
+
+                        <!-- address-->
+                        <label for="register_address" class="cols-sm-2 control-label">Address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="register_address" id="register_address"
+                                       placeholder="Enter your address"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <button class="btn btn-lg btn-block btn-primary" type="submit" onclick="check();">Register</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+</body>
+<script type="text/javascript">
+    function checkpassword() {
+        var register_password = document.getElementById("register_password").value;
+        var register_password_1 = document.getElementById("register_password_1").value;
+        if (register_password !== register_password_1) {
+            alert("Entered passwords differ! ");
+            return false;
+
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,125 @@
+{## class : result_list_content.html#}
+{## writer : huang, wei#}
+{## zid : 5119435#}
+
+<div class="container-fluid" style="padding-top: 10px">
+    <div>
+        <div class="row" style="padding-left: 10px;padding-right: 10px">
+            {% for i in range(contents|length) %}
+                {% if(contents[i]['image']|length) >0 %}
+                    <div class="col-sm-3" style="background-color:#ffffff;padding-top: 5px;">
+                        <div id="demo{{ i }}" class="carousel slide" data-ride="carousel"><!--id 要换才能正常显示-->
+
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#demo{{ i }}" data-slide-to="0" class="active"></li><!--id 要换才能正常显示-->
+                                {% for j in range(1,(contents[i]['image']|length)) %}
+                                    <li data-target="#demo{{ i }}" data-slide-to="{{ j }}"></li>
+                                {% endfor %}
+                            </ul>
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner" align="center">
+                                <div class="carousel-item active ">
+                                    <img src="{{ url_for('static',filename='data/house/'+(contents[i]['house_id']|string)+'/'+contents[i]['image'][0]) }}"
+                                         alt=""
+                                         style="width: auto;height: auto;max-width: 300px;max-height: 200px">
+                                </div>
+                                {% for j in range(1,(contents[i]['image']|length)) %}
+                                    <div class="carousel-item">
+                                        <img src="{{ url_for('static',filename='data/house/'+(contents[i]['house_id']|string)+'/'+contents[i]['image'][j]) }}"
+                                             alt=""
+                                             style="width: auto;height: auto;max-width: 300px;max-height: 200px">
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="carousel-control-prev" href="#demo{{ i }}" data-slide="prev"><!--id 要换才能正常显示-->
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#demo{{ i }}" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+
+                        </div>
+                        <div style="padding-left: 5px">
+                            {% if email and password %}
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <a style="text-decoration:None"
+                                           href="houseinfo1?houseid={{ contents[i][ 'house_id' ] }}&email={{ email }}&password={{ password }}">
+                                            <div align="left" style="font-family: sans-serif;color: #1fb5ff;">
+                                                Host: {{ contents[i]['Host'] }}
+                                            </div>
+                                            <div align="left"
+                                                 style="font-family: Helvetica, sans-serif;font-weight: bold;font-size: medium">
+                                                {{ contents[i]['title'] }}
+                                            </div>
+                                            <div align="left" style="font-family: Roman, serif;font-size: medium">
+                                                price ${{ contents[i]['price'] }} AUD per night
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        {% if contents[i][ 'house_id' ] in Collect %}
+                                            <span onclick="colloct(this,{{ contents[i][ 'house_id' ] }})"
+                                                  style="color: red;font-size: 30px"
+                                                  class="glyphicon-heart glyphicon glyphicon-heart">
+                                            </span>
+                                        {% else %}
+                                            <span onclick="colloct(this,{{ contents[i][ 'house_id' ] }})"
+                                                  style="color: red;font-size: 30px"
+                                                  class="glyphicon-heart glyphicon glyphicon-heart-empty">
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% else %}
+                                <a style="text-decoration:None"
+                                   href="houseinfo?houseid={{ contents[i][ 'house_id' ] }}&email={{ email }}&password={{ password }}">
+                                    <div align="left" style="font-family: sans-serif;color: #1fb5ff;">
+                                        Host: {{ contents[i]['Host'] }}
+                                    </div>
+
+                                    <div align="left"
+                                         style="font-family: Helvetica, sans-serif;font-weight: bold;font-size: medium">
+                                        {{ contents[i]['title'] }}
+                                    </div>
+
+                                    <div align="left" style="font-family: Roman, serif;font-size: medium">
+                                        price ${{ contents[i]['price'] }} AUD per night
+                                    </div>
+                                </a>
+
+                            {% endif %}
+                        </div>
+                    </div><!--房子item-->
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Heading-item area -->
+<div style="width: 100%">
+    <input type="hidden" id="cur_page" value="{{ current_page }}">
+    <form>
+        <div align="center" style="height: 100px">
+            <div class="input-group" style="padding-top: 30px;padding-bottom: 30px;width: 220px;height: 30px">
+                <button type="button" class="btn btn-primary" style="height:30px;width: 30px"
+                        onclick="load_content('content1', '/result_list_content?cur_page={{ pre_page }}&email={{ email }}&password={{ password }}&search='+document.getElementById('search_box').value.replace(' ','+'));">
+                    <span class="glyphicon glyphicon-arrow-left"></span>
+                </button>
+                <div class="input" align="center" style="font-size: large">
+                    &emsp;&emsp;{{ current_page }}&emsp;/&emsp;{{ total_page }}&emsp;&emsp;
+                </div>
+                <button type="button" class="btn btn-primary" style="height:30px;width: 30px"
+                        onclick="load_content('content1', '/result_list_content?cur_page={{ next_page }}&email={{ email }}&password={{ password }}&search='+document.getElementById('search_box').value.replace(' ','+'));">
+                    <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

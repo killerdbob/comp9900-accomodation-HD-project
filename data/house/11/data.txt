@@ -1,0 +1,36 @@
+title:  2 Level Skyhome Near Beach/Hospital
+
+
+configuration: 5 guests,2 bedrooms,3 beds,2 baths
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $340
+ 
+address: 86 Barker Street, Kingsford NSW
+
+latitude: -33.920402
+
+longitude: 151.232238
+ 
+ 
+Amenities:
+Free parking on premises
+Lift
+Wireless Internet
+Kitchen
+Air conditioning
+Hair dryer
+ 
+
+
+Policies:
+No smoking
+No pets
+No parties or events
+Check-in time is 2PM - 9PM
+Check out by 10AM

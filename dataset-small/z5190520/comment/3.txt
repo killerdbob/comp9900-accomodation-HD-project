@@ -1,0 +1,5 @@
+message: The Arts Soc pres is bae
+from: z5190520
+latitude: -33.9271
+longitude: 151.2402
+time: 2016-08-11T07:58:36+0000

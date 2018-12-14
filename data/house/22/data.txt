@@ -1,0 +1,34 @@
+title:  Newly renovated cosy apartment with parking
+
+
+configuration:  2 guests,1 bedroom,1 bed,1 bath
+ 
+ 
+belonging: uil@hotmail 
+
+Host:  Floriane
+
+price:  $242 
+
+address: 112 Todman Avenue, Kensington NSW
+ 
+latitude: -33.909589
+
+longitude: 151.222549
+ 
+Amenities:
+Free parking on premises
+Lift
+Wireless Internet
+Pool
+Kitchen
+Iron
+
+
+Policies:
+Not suitable for infants (under 2 years)
+No smoking
+No pets
+No parties or events
+Check-in is anytime after 2PM
+Check out by 10AM

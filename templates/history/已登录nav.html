@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!--Theme Styles CSS-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm" style="width: 100%;height: 20%;background-color: #4932ff;overflow: auto;margin:0;padding:0">
+    <nav class="navbar navbar-expand-sm" style="width: 100%">
+        <ul class="nav navbar-nav navbar-menu">
+            <li class="nav-item">
+                <a href="search.html" style="color: #ffffff;font-size: large">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="help.html" style="color: #ffffff;font-size: large">Help</a>
+            </li>
+            <li class="nav-item">
+                <a href="Collection.html" style="color: #ffffff;font-size: large">My Collection</a>
+            </li>
+            <li class="nav-item">
+                <div style="width: 60px;">
+                    <a data-toggle="modal" data-target="#register_dialog">
+                        <img class="img-thumbnail" src="img/property_listing/1.jpg">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+</nav>
+
+<div class="modal" id="register_dialog" align="center"><!--login dialog-->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-body" style="width: 100%;">
+                <img class="img-thumbnail" style="width:150px;" src="img/property_listing/1.jpg">
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body" style="width: 75%" align="left">
+                <form class="form-signin" style="width: 100%">
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">User Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <button type="button" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <input type="text" class="form-control" name="name" id="username"
+                                       placeholder="Your User Name">
+                            </div>
+                        </div>
+                        <label for="email" class="cols-sm-2 control-label">Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="email" id="email"
+                                       placeholder="Your Email">
+                            </div>
+                        </div>
+                        <label for="username" class="cols-sm-2 control-label">Full Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="fullname"
+                                       placeholder="Your Full Name">
+                            </div>
+                        </div>
+                        <label for="phonenumber" class="cols-sm-2 control-label">Phone Number</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-earphone"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="phonenumber"
+                                       placeholder="Your Phone Number">
+                            </div>
+                        </div>
+                        <label for="address" class="cols-sm-2 control-label">Address</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-home"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="address"
+                                       placeholder="Your Address">
+                            </div>
+                        </div>
+                        <label for="password" class="cols-sm-2 control-label">New Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="password"
+                                       placeholder="Input Your New Password">
+                            </div>
+                        </div>
+                        <label for="password_1" class="cols-sm-2 control-label">Confirm Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-lock"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" name="username" id="password_1"
+                                       placeholder="Confirm Your New Password">
+                            </div>
+                        </div>
+                        <br>
+                        <div align="center">
+                            <div style="width: 100%">
+                                <button class="btn btn-lg btn-block btn-primary" type="submit">Save</button>
+                            </div>
+                        </div>
+                        <p class="mt-5 mb-3 text-muted" align="center">© 2018-2019</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div><!--register dialog-->
+
+</body>
+</html>

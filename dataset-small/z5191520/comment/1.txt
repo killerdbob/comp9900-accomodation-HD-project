@@ -1,0 +1,5 @@
+from: z5191520
+message: Lawrence Uy from ASOC, you are cute. I love your hair and the way you blink and your shy, geeky demeanour. I know you have a girlfriend and I hope she makes you happy.
+time: 2013-05-05T07:00:52+0000
+longitude: 151.1614
+latitude: -33.9183

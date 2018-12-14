@@ -1,0 +1,6 @@
+user_name:13
+birthday:2012-05-15
+password:1
+email:zzzz22000zzzz@gmail.com
+phone number:04640
+address:9/30 gardeners road

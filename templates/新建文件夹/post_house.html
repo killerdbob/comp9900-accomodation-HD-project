@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    </style>
+    <title>person_information</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='static/css/test.css') }}" media="all"/>
+
+</head>
+<body style="zoom: 1;">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark"
+     style="z-index:100;width: 100%;position:fixed;height: 60px;background-color: #4932ff;margin:0;padding:0">
+    <!-- Brand -->
+    <a class="navbar-brand" style="font-size: 30px;color:white">Bootstrap</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large"> Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large"> Help </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/personal_info?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large"> My Collection </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <div style="width: 40px;">
+                    <img class="img-thumbnail" style="padding-top: initial;padding-bottom: initial"
+                         src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}">
+                </div>
+            </li>
+
+            <form action="log_out" method="get">
+                <input type="hidden" name="email" value="{{ email }}">
+                <input type="hidden" name="password" value="{{ password }}">
+                <div style="padding-left:5px;width:30px;padding-top: initial;padding-bottom: initial">
+                    <button type="submit" class="btn btn-warning btn-lg"><span
+                            class="glyphicon glyphicon-log-out"></span>
+                    </button>
+                </div>
+            </form>
+        </ul>
+    </div>
+
+</nav>
+
+
+<div class="main" style="padding-top: 70px;" align="center">
+
+    <div class="yp-post" style="width: 95%">
+
+        <h1>Post your house here</h1>
+        <hr>
+        <div id="row">
+            <form class="form-horizontal" method="POST" enctype="multipart/form-data"
+                  action="post_house">
+                <div class="col-xs-6 ">
+                    <!--<form class="form-horizontal fv-form fv-form-bootstrap" onsubmit="return false" novalidate="novalidate" _lpchecked="1">-->
+                    <!--<button type="submit" class="fv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>-->
+
+
+                    <input name="email" type="hidden" value="{{ email }}">
+                    <input name="password" type="hidden" value="{{ password }}">
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">Title</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" name="title" placeholder="Enter your title" value=""
+                                   autocomplete="off" style="cursor: auto;">
+                            <small class="text-muted">**Please not so long.**</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right ">Price</label>
+                        <div class="col-xs-8">
+                            <div class="input-group">
+                                <div class="input-group-addon" style="height: initial">$</div>
+                                <input type="text" pattern="[0-9]{0,5}" class="form-control" name="price"
+                                       placeholder="between 0-99999" value="0" style="height: initial">
+                                <div class="input-group-addon" style="height: initial;width: auto">Per Day</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right">Address</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" id="address" name="address"
+                                   placeholder="put your address here" value="" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">Guest</label>
+                        <div class="col-xs-8">
+                            <select class="form-control" name="guest">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">Bedroom</label>
+                        <div class="col-xs-8">
+                            <select class="form-control" name="bedroom">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">Bed</label>
+                        <div class="col-xs-8">
+                            <select class="form-control" name="bed">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">Bath</label>
+                        <div class="col-xs-8">
+                            <select class="form-control" name="bath">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right">Amenities</label>
+                        <div class="col-xs-8">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Air conditioning" name="options1">Air
+                                conditioning </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Cable TV" name="options1">Cable TV </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Dryer" name="options1">Dryer </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Essentials" name="options1">Essentials </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Free parking on premises" name="options1">Free parking on
+                                premises </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Hair dryer" name="options1">Hair dryer </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Hangers" name="options1">Hangers </label>
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Iron" name="options2">Iron </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Kitchen" name="options2">Kitchen </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Laptop friendly workspace" name="options2">Laptop friendly
+                                workspace </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Lift" name="options2">Lift </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Pool" name="options2">Pool </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Wireless Internet" name="options2">Wireless Internet
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" value="Washer" name="options2">Washer </label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right">Policies</label>
+                        <div class="col-xs-8">
+                            <textarea id="policy" class="form-control" name="policy"
+                                      placeholder="Please write down the policy"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right">Content</label>
+                        <div class="col-xs-8">
+                            <textarea id="content" class="form-control" name="content"
+                                      placeholder="Please write down the content"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label no-padding-right required">File input</label>
+
+                        <div class="col-xs-8">
+                            <input type="file" multiple class="form-control-file" name="pic"
+                                   id="exampleInputFile">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6" style="height: 1000px;background-color: purple">
+                    <h1>map</h1>
+                </div>
+                <!--<br>-->
+                <!--<hr style="width: 100%">-->
+                <div class="col-xs-12 m-auto" >
+                    <div class="checkbox col-xs-4" align="center" style="width: 100%">
+                        <label>
+                            <input id="ConfirmButton" type="checkbox"> I am not a robot
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+
+                    <div class="col-xs-12 " align="center">
+                        <button class="btn btn-lg btn-block btn-primary " style="width: 40%" id="submit" type="submit">
+                            Post
+                        </button>
+                        <br>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    window.onload = function () {
+
+        /*在gameid增加对检查按钮的验证*/
+        var submitBtn = document.getElementById("submit");
+
+        submitBtn.onclick = function () {
+            if (!document.getElementById("ConfirmButton").checked) {
+                alert("Please click the robot button");
+                /*请核对信息,并勾选按钮!*/
+                return false;
+            }
+        };
+    };
+</script>
+
+</html>

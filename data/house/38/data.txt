@@ -1,0 +1,37 @@
+title:  Close to UNSW, City and Beaches
+
+
+configuration: 2 guests,1 bedroom,1 bed,1 shared bath
+ 
+
+belonging: ab2@gmail.com 
+
+Host: Siteng
+ 
+
+price:   $55
+ 
+address: 35 Middle Street, Kingsford NSW
+
+latitude: -33.921376
+
+longitude: 151.229625
+ 
+ 
+Amenities:
+Breakfast
+Wireless Internet
+Kitchen
+Hair dryer
+Iron
+Laptop friendly workspace
+ 
+
+
+Policies:
+Not suitable for children and infants
+No pets
+No parties or events
+Check-in time is flexible
+Check out by 11AM
+ 

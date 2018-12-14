@@ -1,0 +1,32 @@
+title:  Randwick Spacious Loft, 2 single beds
+
+
+configuration:  2 guests,1 bedroom,2 bed,1 bath
+ 
+
+belonging: ys12@hotmail.com 
+
+Host:  Kelly
+ 
+
+price:   $86
+ 
+address: 2 Addison Street, Kensington NSW
+
+
+latitude: -33.911999
+
+longitude: 151.222841
+
+ 
+ 
+Amenities:
+Wireless Internet
+Cable TV
+Kitchen
+Hair dryer
+ 
+
+
+Policies:
+Self check-in with lockbox

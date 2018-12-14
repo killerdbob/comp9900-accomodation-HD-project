@@ -1,0 +1,29 @@
+21	125 Alison Road, Randwick NSW
+	-33.912737, 151.238061
+
+22	54 Cook Street, Randwick NSW
+	-33.911974, 151.238928
+
+23	8 Silver Street, Randwick NSW
+	-33.913703, 151.238332
+
+24	44 Dutruc Street, Randwick NSW
+	-33.911855, 151.245103
+
+25	74 Cowper Street, Randwick NSW
+	-33.909476, 151.240539
+
+26	9 Frances Street, Randwick NSW
+	-33.910899, 151.239557
+
+27	4 Abbey Street, Randwick NSW
+	-33.911540, 151.239980
+
+28	28 Cook Street, Randwick NSW
+	-33.910837, 151.239177
+
+29	30 Waratah Avenue, Randwick NSW
+	-33.914636, 151.238642
+
+30	51 Church Street, Randwick NSW
+	-33.911358, 151.238517

@@ -1,0 +1,8 @@
+user_name:peng2
+birthday:2018-09-12
+password:12
+email:test@test.com
+phone number:111111
+address:5da
+property:
+deleted_post:

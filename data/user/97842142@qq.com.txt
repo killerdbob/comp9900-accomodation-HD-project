@@ -1,0 +1,7 @@
+user_name:Laicong
+birthday:06/10/1990
+password:1
+email:97842142@qq.com 
+phone number:123777789
+address:kingsford,unsw
+property:4,5,6,7,35,36,37

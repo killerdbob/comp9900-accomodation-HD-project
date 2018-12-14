@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>person_information</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLCi0u9QNKIwBXcQcBHLtAMzUO7ARugjI&libraries=places&callback=initMap"
+            type="text/javascript">
+    </script>
+</head>
+<body>
+<input type="hidden" value="{{ l }}">
+<!-- Banner area -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark"
+     style="z-index:100;width: 100%;position:fixed;height: 60px;background-color: #4932ff;margin:0;padding:0">
+    <!-- Brand -->
+    <a class="navbar-brand" style="font-size: 30px;color:white">Bootstrap</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/home?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp; Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/help?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large">&emsp; Help </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/personal_info?email={{ email }}&password={{ password }}"
+                   style="color: #ffffff;font-size: large"> &emsp;My Collection </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <div style="width: 40px;">
+                    <img class="img-thumbnail" style="padding-top: initial;padding-bottom: initial"
+                         src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}">
+                </div>
+            </li>
+
+            <form action="log_out" method="get">
+                <input type="hidden" name="email" value="{{ email }}">
+                <input type="hidden" name="password" value="{{ password }}">
+                <div style="padding-left:5px;width:30px;padding-top: initial;padding-bottom: initial">
+                    <button type="submit" class="btn btn-warning btn-lg"><span
+                            class="glyphicon glyphicon-log-out"></span>
+                    </button>
+                </div>
+            </form>
+        </ul>
+    </div>
+
+</nav>
+<br>
+
+
+<div class="container-fluid" style="padding-top: 70px">
+    <div class="row">
+        <!-- left -->
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Personal Info</div>
+                <div class="panel-body">
+                    <div align="center">
+                        <img style="width: 50%"
+                             src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}"
+                             class="img-responsive img-rounded img-thumbnail" alt="Me"
+                             onclick="document.getElementById('pic').click();">
+                        <!--<label for="exampleInputFile" class="cols-sm-2 control-label">File input</label>
+                                <div class="cols-sm-10">
+                                    <input type="file" multiple class="form-control-file" name="pic"
+                                           >
+                                </div>-->
+
+                        <form class="form-post" method="POST" enctype="multipart/form-data"
+                              action="upload_head">
+                            <input type="hidden" name="email"
+                                   value="{{ email }}">
+                            <input type="hidden" name="password"
+                                   value="{{ password }}">
+                            <input type="file" name="pic" id="pic" hidden
+                                   onchange="document.getElementById('submit_pic').click();">
+                            <button type="submit" hidden id="submit_pic"></button>
+                        </form>
+                        <p style="font-size: 10px">click the pic<br> to upload Head Portraits</p>
+                    </div>
+
+                    <p class="text-center text-primary" style="font-size: 20px;" title="user_name">
+                        <strong>{{ user_name }}</strong>
+                    </p>
+                    <span class="glyphicon glyphicon-user" style="font-size: 10px;"
+                          title="name">&emsp;{{ user_name }}</span>
+                    <br>
+                    <span class="glyphicon glyphicon-envelope" style="font-size: 10px;"
+                          title="email"><code>&emsp;{{ email }}</code></span>
+                    <br>
+                    <span class="glyphicon glyphicon glyphicon-gift" style="font-size: 10px;"
+                          title="birthday">&emsp;{{ birthday }}</span>
+                    <br>
+                    <span class="glyphicon glyphicon-phone" style="font-size: 10px;"
+                          title="phone_number">&emsp;{{ phone_number }}</span>
+                    <br>
+                    <span class="glyphicon glyphicon-home" style="font-size: 10px;"
+                          title="address">&emsp;{{ address }}</span>
+                    <br>
+                </div>
+            </div>
+            <div>
+                <a data-toggle="modal" data-target="#change_dialog" class='btn btn-lg btn-primary btn-block '
+                   href="change_pw.html">Preference</a>
+                <br>
+                <a class="btn btn-lg btn-block btn-success"
+                   style="height: 50px; vertical-align:middle;line-height: 35px; text-align:center;"
+                   href="/to_post_house?email={{ email }}&password={{ password }}">Post a new Property</a>
+                {#                <button type="button" class="btn btn-lg btn-block btn-success"#}
+                {#                        style="height: 50px;" href="/to_post_house?email={{ email }}&password={{ password }}">#}
+                {#                    Post a new Property#}
+                {#                </button>#}
+
+                <button type="button" class="btn btn-lg btn-block btn-success"
+                        style="height: 50px;" data-toggle="modal"
+                        data-target="#feedback">
+                    Feedback
+                </button>
+                <!-- <a class='btn btn-lg btn-primary btn-block justify-content-end ' style="width:50%;height:40px;margin:10px;padding:10px" href="post_house.html">Post a new Property + </a>-->
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-sm-9">
+            <!-- 右侧房屋信息 -->
+            <div class="panel-group" id="accoradion">
+                <div class="panel panel-default">
+                    <!-- 右侧post图片 -->
+                    {% if(Post|length)>0 %}
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accoradion">My Post</a>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse"> {#     如果需要默认折叠,class里加collapse#}
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        {% for item in Post %}
+                                            <li class="list-group-item list-group-item-success">
+                                                <div class="row">
+                                                    <div class="col-sm-4" align="center"><strong
+                                                            style="font-size: large;">{{ item['title'] }}</strong><br><br>
+                                                        <div style="font-size: medium;height: 80px" align="center">
+                                                            Price:
+                                                            &emsp;
+                                                            ${{ item['price'] }}
+                                                            per
+                                                            night
+                                                        </div>
+                                                        <div style="padding-bottom: 5px;">
+                                                            <a class="btn btn-lg btn-block btn-success"
+                                                               onclick="document.getElementById('house_id').value={{ item['house_id'] }};"
+                                                               href="/to_edit_house?email={{ email }}&password={{ password }}&houseid={{ item['house_id'] }}">Edit</a>
+                                                            {#                                                            <button class="btn btn-lg btn-block btn-success"#}
+                                                            {#                                                                    onclick="document.getElementById('house_id').value={{ item['house_id'] }};"#}
+                                                            {#                                                                    data-toggle="modal" data-target="#edit_house">#}
+                                                            {#                                                                Edit#}
+                                                            {#                                                            </button>#}
+                                                            <div style="padding-top: 5px">
+                                                                <form action="remove_house" method="get">
+                                                                    <input type="hidden" name="email"
+                                                                           value="{{ email }}">
+                                                                    <input type="hidden" name="password"
+                                                                           value="{{ password }}">
+                                                                    <input type="hidden" name="house_id"
+                                                                           value="{{ item['house_id'] }}">
+                                                                    <button class="btn btn-lg btn-block btn-danger"
+                                                                            type="submit">Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% if (item['image']|length)>0 %}
+                                                        <div id="demo{{ item['house_id'] }}"
+                                                             class="col-sm-4 carousel slide"
+                                                             data-ride="carousel" style="width: inherit">
+                                                            <!--id 要换才能正常显示-->
+
+                                                            <ul class="carousel-indicators">
+                                                                <li data-target="#demo{{ item['house_id'] }}"
+                                                                    data-slide-to="0"
+                                                                    class="active"></li>
+                                                                {% for i in range(1,item['image']|length) %}
+                                                                    <li data-target="#demo{{ item['house_id'] }}"
+                                                                        data-slide-to="{{ i }}"></li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                            <div class="carousel-inner">
+                                                                <div class="carousel-item active ">
+                                                                    <img src="{{ url_for('static',filename='data/house/'+(item['house_id']|string)+'/'+item['image'][0]) }}"
+                                                                         alt=""
+                                                                         style="height: 200px;max-width: 400px;">
+                                                                </div>
+                                                                {% for i in range(1,item['image']|length) %}
+                                                                    <div class="carousel-item" align="center">
+                                                                        <img src="{{ url_for('static',filename='data/house/'+(item['house_id']|string)+'/'+item['image'][i]) }}"
+                                                                             alt=""
+                                                                             style="height: 200px;max-width: 400px;">
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+
+                                                            <a class="carousel-control-prev"
+                                                               href="#demo{{ item['house_id'] }}"
+                                                               data-slide="prev">
+                                                                <!--id 要换才能正常显示-->
+                                                                <span class="carousel-control-prev-icon"></span>
+                                                            </a>
+                                                            <a class="carousel-control-next"
+                                                               href="#demo{{ item['house_id'] }}"
+                                                               data-slide="next">
+                                                                <span class="carousel-control-next-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class="col-sm-4"
+                                                         style="overflow-scrolling: auto">{{ item['content'] }}</div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <!-- 右侧 recover post图片 -->
+                    {% if (Deleted|length)>0 %}
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <a href="#collapseTwo" data-toggle="collapse" data-parent="#accoradion">Deleted Post</a>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        {% for item in Deleted %}
+                                            <li class="list-group-item list-group-item-success">
+                                                <div class="row">
+                                                    <div class="col-sm-4" align="center"><strong
+                                                            style="font-size: large;">{{ item['title'] }}</strong><br><br>
+                                                        <div style="font-size: medium;height: 120px" align="center">
+                                                            Price:
+                                                            &emsp;
+                                                            ${{ item['price'] }}
+                                                            per
+                                                            night
+                                                        </div>
+                                                        <div style="padding-bottom: 5px;">
+                                                            <div style="padding-top: 5px">
+                                                                <form action="recover_house" method="get">
+                                                                    <input type="hidden" name="email"
+                                                                           value="{{ email }}">
+                                                                    <input type="hidden" name="password"
+                                                                           value="{{ password }}">
+                                                                    <input type="hidden" name="house_id"
+                                                                           value="{{ item['house_id'] }}">
+                                                                    <button class="btn btn-lg btn-block btn-warning"
+                                                                            type="submit">Recover
+                                                                    </button>
+                                                                </form>
+                                                                <div style="padding-top: 5px">
+                                                                    <form action="remove_house_permanent" method="get">
+                                                                        <input type="hidden" name="email"
+                                                                               value="{{ email }}">
+                                                                        <input type="hidden" name="password"
+                                                                               value="{{ password }}">
+                                                                        <input type="hidden" name="house_id"
+                                                                               value="{{ item['house_id'] }}">
+                                                                        <button class="btn btn-lg btn-block btn-danger"
+                                                                                type="submit">Permanent Remove
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% if (item['image']|length)>0 %}
+                                                        <div id="demo{{ item['house_id'] }}"
+                                                             class="col-sm-4 carousel slide"
+                                                             data-ride="carousel" style="width: inherit">
+                                                            <!--id 要换才能正常显示-->
+
+                                                            <ul class="carousel-indicators">
+                                                                <li data-target="#demo{{ item['house_id'] }}"
+                                                                    data-slide-to="0"
+                                                                    class="active"></li>
+                                                                {% for i in range(1,item['image']|length) %}
+                                                                    <li data-target="#demo{{ item['house_id'] }}"
+                                                                        data-slide-to="{{ i }}"></li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                            <div class="carousel-inner">
+                                                                <div class="carousel-item active ">
+                                                                    <img src="{{ url_for('static',filename='data/house/'+(item['house_id']|string)+'/'+item['image'][0]) }}"
+                                                                         alt=""
+                                                                         style="height: 200px;max-width: 400px;">
+                                                                </div>
+                                                                {% for i in range(1,item['image']|length) %}
+                                                                    <div class="carousel-item" align="center">
+                                                                        <img src="{{ url_for('static',filename='data/house/'+(item['house_id']|string)+'/'+item['image'][i]) }}"
+                                                                             alt=""
+                                                                             style="height: 200px;max-width: 400px;">
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+
+                                                            <a class="carousel-control-prev"
+                                                               href="#demo{{ item['house_id'] }}"
+                                                               data-slide="prev">
+                                                                <!--id 要换才能正常显示-->
+                                                                <span class="carousel-control-prev-icon"></span>
+                                                            </a>
+                                                            <a class="carousel-control-next"
+                                                               href="#demo{{ item['house_id'] }}"
+                                                               data-slide="next">
+                                                                <span class="carousel-control-next-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class="col-sm-4"
+                                                         style="overflow-scrolling: auto">{{ item['content'] }}</div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <!--feedback dialog-->
+        <div class="modal" id="feedback" align="center">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- post modal -->
+                    <div class="modal-body" style="width: 75%" align="left">
+                        <h1 class="h3 mb-3 font-weight-normal">Feedback</h1>
+                        <form class="form-post" method="POST" enctype="multipart/form-data"
+                              action="{{ url_for('feedback') }}">
+
+                            <div class="form-group">
+                                <label for="title" class="cols-sm-2 control-label">Title</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="title" id="title"
+                                               placeholder="Enter your title"/>
+                                        <input name="email" type="hidden" value="{{ email }}">
+                                    </div>
+                                </div>
+                                <small class="text-muted">**Please not so long.**</small>
+                                <br>
+
+
+                                <!--content-->
+                                <label for="content" class="cols-sm-2 control-label">Content</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <textarea class="form-control" name="content" id="content" rows="6"
+                                                  placeholder="Please write down the content"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+
+
+                                <button class="btn btn-lg btn-block btn-primary" id="submit" type="submit">Post</button>
+                                <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--feedback dialog-->
+
+        <!--edit_house modal-->
+        <div class="modal" id="edit_house" align="center">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- post modal -->
+                    <div class="modal-body" style="width: 75%" align="left">
+                        <h1 class="h3 mb-3 font-weight-normal">Edit your house here</h1>
+                        <form class="form-post" method="GET" enctype="multipart/form-data"
+                              action="edit_house">
+                            <div class="form-group">
+                                <label for="title" class="cols-sm-2 control-label">Title</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="title" id="title"
+                                               placeholder="Enter your title"/>
+                                        <input name="email" type="hidden" value="{{ email }}">
+                                        <input name="password" type="hidden" value="{{ password }}">
+                                        <input type="hidden" id="house_id" name="house_id"/>
+                                    </div>
+                                </div>
+                                <small class="text-muted">**Please not so long.**</small>
+                                <br>
+                                <label for="price" class="cols-sm-2 control-label">Price</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-usd"></span>
+                                            </button>
+                                        </div>
+
+                                        <input type="text" pattern="[0-9]{0,5}" class="form-control" name="price"
+                                               id="price"
+                                               placeholder="$"/>
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="configuration" class="cols-sm-2 control-label">Configuration</label>
+                                <div class="cols-sm-10">
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="guest" style="font-size:smaller">Guest</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+                                            <select class="form-control" id="guest" name="guest">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bedroom" style="font-size:smaller">Bedroom</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bedroom" name="bedroom">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bed" style="font-size:smaller">Bed</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bed" name="bed">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bath" style="font-size:smaller">Bath</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bath" name="bath">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+
+                                </div>
+                                <br>
+
+                                <!--设施-->
+                                <label for="options" class="cols-sm-2 control-label">Amenities:</label>
+                                <div class="cols-sm-10">
+                                    <div class="row">
+
+                                        <div class="col-sm-5" align="left">
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Air conditioning">Air
+                                                    conditioning</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Cable TV">Cable TV</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Dryer">Dryer</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Essentials">Essentials</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Free parking on premises">Free parking on premises</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Hair dryer">Hair
+                                                    dryer</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Hangers">Hangers</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-5" align="left">
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Iron">Iron</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Kitchen">Kitchen</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Laptop friendly workspace">Laptop friendly
+                                                    workspace</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Lift">Lift</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Pool">Pool</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Wireless Internet">Wireless
+                                                    Internet</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Washer">Washer</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!--policies-->
+                                <label for="policy" class="cols-sm-2 control-label">Policies</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <textarea class="form-control" name="policy" id="policy" rows="6"
+                                                  placeholder="Please write down the policy"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--content-->
+                                <label for="content" class="cols-sm-2 control-label">Content</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <textarea class="form-control" name="content" id="content" rows="6"
+                                                  placeholder="Please write down the content"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <label for="exampleInputFile" class="cols-sm-2 control-label">File input</label>
+                                <div class="cols-sm-10">
+                                    <input type="file" multiple class="form-control-file" name="pic"
+                                           id="exampleInputFile">
+                                </div>
+
+                            </div>
+                            <br>
+
+                            <div class="checkbox m-auto">
+                                <label>
+                                    <input id="ConfirmButton" type="checkbox"> I am not a robot
+                                </label>
+                            </div>
+                            <button class="btn btn-lg btn-block btn-primary" id="submit" type="submit">Post</button>
+                            <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--edit_house modal-->
+
+        <!--post house dialog-->
+        <div class="modal" id="post_house" align="center">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- post modal -->
+                    <div class="modal-body" style="width: 75%" align="left">
+                        <h1 class="h3 mb-3 font-weight-normal">Post your house here</h1>
+                        <form class="form-post" method="POST" enctype="multipart/form-data"
+                              action="post_house">
+
+                            <div class="form-group">
+                                <label for="title" class="cols-sm-2 control-label">Title</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="title" id="title"
+                                               placeholder="Enter your title" required/>
+                                        <input name="email" type="hidden" value="{{ email }}">
+                                        <input name="password" type="hidden" value="{{ password }}">
+                                    </div>
+                                </div>
+                                <small class="text-muted">**Please not so long.**</small>
+                                <br>
+
+                                <label for="price" class="cols-sm-2 control-label">Price</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-usd"></span>
+                                            </button>
+                                        </div>
+
+                                        <input type="text" pattern="[0-9]{0,5}" class="form-control" name="price"
+                                               id="price"
+                                               placeholder="$" required/>
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="address" class="cols-sm-2 control-label">Address</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-usd"></span>
+                                            </button>
+                                        </div>
+
+                                        <input type="text" class="form-control" name="address"
+                                               id="address"
+                                               placeholder="put your address here" required/>
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="configuration" class="cols-sm-2 control-label">Configuration</label>
+                                <div class="cols-sm-10">
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="guest" style="font-size:smaller">Guest</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+                                            <select class="form-control" id="guest" name="guest">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bedroom" style="font-size:smaller">Bedroom</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bedroom" name="bedroom">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bed" style="font-size:smaller">Bed</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bed" name="bed">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset class="form-group justify-content-end" style="width: 100px;">
+                                        <label for="bath" style="font-size:smaller">Bath</label>
+
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span class="glyphicon glyphicon-euro"></span>
+                                                </button>
+                                            </div>
+
+                                            <select class="form-control" id="bath" name="bath">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+
+
+                                </div>
+                                <br>
+
+                                <!--设施-->
+                                <label for="options" class="cols-sm-2 control-label">Amenities:</label>
+                                <div class="cols-sm-10">
+                                    <div class="row">
+
+                                        <div class="col-sm-5" align="left">
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Air conditioning">Air
+                                                    conditioning</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Cable TV">Cable TV</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Dryer">Dryer</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Essentials">Essentials</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Free parking on premises">Free parking on premises</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox" value="Hair dryer">Hair
+                                                    dryer</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options1" type="checkbox"
+                                                              value="Hangers">Hangers</label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-5" align="left">
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Iron">Iron</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Kitchen">Kitchen</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Laptop friendly workspace">Laptop friendly
+                                                    workspace</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Lift">Lift</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Pool">Pool</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox" value="Wireless Internet">Wireless
+                                                    Internet</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input name="options2" type="checkbox"
+                                                              value="Washer">Washer</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <br>
+
+                                <!--policies-->
+                                <label for="policy" class="cols-sm-2 control-label">Policies</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <textarea class="form-control" name="policy" id="policy" rows="6"
+                                                  placeholder="Please write down the policy"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--content-->
+                                <label for="content" class="cols-sm-2 control-label">Content</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-edit"></span>
+                                            </button>
+                                        </div>
+                                        <textarea class="form-control" name="content" id="content" rows="6"
+                                                  placeholder="Please write down the content"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <label for="exampleInputFile" class="cols-sm-2 control-label">File input</label>
+                                <div class="cols-sm-10">
+                                    <input type="file" multiple class="form-control-file" name="pic"
+                                           id="exampleInputFile">
+                                </div>
+
+                            </div>
+                            <br>
+
+                            <div class="checkbox m-auto">
+                                <label>
+                                    <input id="ConfirmButton" type="checkbox"> I am not a robot
+                                </label>
+                            </div>
+                            <button class="btn btn-lg btn-block btn-primary" id="submit" type="submit">Post</button>
+                            <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--post house dialog-->
+
+        <!--change dialog-->
+        <div class="modal" id="change_dialog" align="center"><!--login dialog-->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-body" style="width: 100%;">
+                        <img class="img-thumbnail" style="width:150px;"
+                             src="{{ url_for('static',filename='data/user/head/'+(email|string)+'.jpg') }}">
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body" style="width: 75%" align="left">
+                        <form class="form-signin" style="width: 100%">
+                            <div class="form-group">
+                                <label for="username" class="cols-sm-2 control-label">User Name</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                        <input type="text" class="form-control" name="user_name" id="user_name"
+                                               placeholder="{{ user_name }}" value="{{ user_name }}">
+                                    </div>
+                                </div>
+                                <label for="email" class="cols-sm-2 control-label">Email</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-envelope"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="email" id="email"
+                                               placeholder="{{ email }}" value="{{ email }}">
+                                    </div>
+                                </div>
+                                <label for="phonenumber" class="cols-sm-2 control-label">Phone Number</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-earphone"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="phone_number" id="phone_number"
+                                               placeholder="{{ phone_number }}" value="{{ phone_number }}">
+                                    </div>
+                                </div>
+                                <label for="address" class="cols-sm-2 control-label">Address</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-home"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="address" id="address"
+                                               placeholder="{{ address }}" value="{{ address }}">
+                                    </div>
+                                </div>
+                                <label for="register_birthday" class="cols-sm-2 control-label">Your birthday</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                            </button>
+                                        </div>
+                                        <input type="date" value="{{ birthday }}" name="birthday"
+                                               id="birthday">
+                                    </div>
+                                </div>
+                                <label for="password" class="cols-sm-2 control-label">New Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-lock"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="password" id="password"
+                                               placeholder="Input Your New Password">
+                                    </div>
+                                </div>
+                                <label for="password_1" class="cols-sm-2 control-label">Confirm Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="glyphicon glyphicon-lock"></span>
+                                            </button>
+                                        </div>
+                                        <input type="text" class="form-control" name="comfirm" id="comfirm"
+                                               placeholder="Confirm Your New Password">
+                                    </div>
+                                </div>
+                                <br>
+                                <div align="center">
+                                    <div style="width: 100%">
+                                        <button class="btn btn-lg btn-block btn-danger" type="submit">change</button>
+                                    </div>
+                                </div>
+                                <p class="mt-5 mb-3 text-muted" align="center">© 2018-2019</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--change dialog-->
+
+    </div>
+</div>
+<footer>
+    <nav class="navbar-fixed-bottom text-center navbar-default">
+        All images and contents
+    </nav>
+</footer>
+
+
+</body>
+<script>
+    window.onload = function () {
+
+        /*在gameid增加对检查按钮的验证*/
+        var submitBtn = document.getElementById("submit");
+
+        submitBtn.onclick = function () {
+            if (!document.getElementById("ConfirmButton").checked) {
+                alert("Please click the robot button");
+                /*请核对信息,并勾选按钮!*/
+                return false;
+            }
+        };
+    };
+
+    function initMap() {
+        autoSearch = new google.maps.places.Autocomplete(document.getElementById('address'));
+        //Geocoder needed for latitude and longitude
+        geocoder = new google.maps.Geocoder();
+    }
+
+    $('#address').on('blur', function () {
+        var searchValue = $("#address").val();
+        geocoder.geocode({'address': searchValue}, function (results, status) {
+            if (status === 'OK') {
+                var geometry = results[0].geometry.location;
+                latitude = geometry.lat();
+                longitude = geometry.lng();
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,9 @@
+user_name:huang wei
+birthday:04/10/1992
+password:1
+email:z5119435@student.unsw.edu.au
+phone number:123456789
+address:kingsford,unsw
+property:2,3,31,32,33,34
+deleted_post:1
+collect:12,9
